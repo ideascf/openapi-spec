@@ -1,0 +1,17 @@
+version: v1
+name: buf.build/ideascf/openapi
+deps:
+  - buf.build/ideascf/protobuf
+  - buf.build/grpc-ecosystem/grpc-gateway
+  - buf.build/googleapis/googleapis
+# disable lint for cm
+lint:
+  use:
+    - MINIMAL
+  except:
+    - RPC_REQUEST_STANDARD_NAME
+    - RPC_RESPONSE_STANDARD_NAME
+    - PACKAGE_VERSION_SUFFIX
+breaking:
+  ignore:
+    - cm/service.proto

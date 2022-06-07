@@ -1,0 +1,23 @@
+version: v1
+plugins:
+  #  - name: gogofast
+  #    out: output
+  #    opt:
+  #      - paths=source_relative
+  #      - plugins=grpc
+  - name: go
+    out: ../pbgen/proto/
+    opt:
+      - paths=source_relative
+  - name: go-grpc
+    out: ../pbgen/proto/
+    opt:
+      - paths=source_relative
+#  - name: grpc-gateway
+#    out: ../pbgen/proto/
+#    opt:
+#      - paths=source_relative
+  - name: openapiv2
+    out: ../pbgen/oas/
+    strategy: all
+    opt: allow_merge=true,merge_file_name=openapi-spec

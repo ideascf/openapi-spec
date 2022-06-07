@@ -1,0 +1,13 @@
+version: v1
+name: buf.build/ideascf/base
+lint:
+  use:
+    - DEFAULT
+  except:
+    - PACKAGE_VERSION_SUFFIX
+    - ENUM_ZERO_VALUE_SUFFIX
+breaking:
+  use:
+    - FILE
+  except:
+    - FIELD_SAME_NAME
